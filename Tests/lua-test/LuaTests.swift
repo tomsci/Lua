@@ -3856,4 +3856,10 @@ final class LuaTests: XCTestCase {
         XCTAssertTrue(L.iscfunction(1))
         XCTAssertTrue(L.rawequal(1, 2))
     }
+
+    func test_anyhashable() {
+        let i: Int32 = 1
+        let a = i as AnyHashable
+        XCTAssertEqual(a as? Int8, 1)
+    }
 }
